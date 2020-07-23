@@ -1,17 +1,0 @@
-spring:
-  application:
-    name: GATEWAY-SERVICE
-  cloud:    gateway:      routes:      - id: service-customer
-        uri: lb://CUSTOMER-SERVICE        predicates:        - Path=/customer/**   
-
-eureka:
-  client:
-    serviceUrl:
-      register-with-eureka: true
-      fetch-registry:       true
-      defaultZone:          http://localhost:8761/eureka
-  instance: 
-    hostname: locahost
-
-server:
-  port: 8989
